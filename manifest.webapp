@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "name": "EU Web Challenge",
+  "launch_path": "/index.html",
+  "description": "European Web Challenge task.",
+  "icons": {
+    "128": "/images/touch/icon-128x128.png"
+  },
+  "developer": {
+    "name": "",
+    "url": ""
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "EU Web Challenge",
+      "description": "European Web Challenge task."
+    }
+  }
+}
