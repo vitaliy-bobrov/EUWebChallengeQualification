@@ -1,0 +1,31 @@
+.facebook-widget {
+	position: absolute;
+	top: 100%;
+	right: 3%;
+	z-index: $widget;	
+	perspective: 100;
+	transform-style: preserve-3d;
+
+	@include mq(desktop) {
+		right: 2px;
+	}
+
+	&__link {
+		display: block;
+		width: 90px;
+		height: 50px;
+		border-radius: 0 0 4px 4px;
+		background: url('../images/facebook-widget-logo.svg') no-repeat center;
+		transform-origin: 0 0 0;		
+
+		@include mq(tablet) {
+			width: 108px;
+		height: 75px;
+		}
+
+		&:hover,
+		&:focus {
+			animation: rotatority .8s ease;
+		}
+	}
+}

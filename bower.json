@@ -1,0 +1,12 @@
+{
+  "name": "euwebchallenge",
+  "version": "1.0.0",
+  "devDependencies": {
+    "mq-sass": "~0.2.0",
+    "normalize-scss": "~3.0.3"
+  },
+  "dependencies": {
+    "owl.carousel": "OwlCarousel2#~2.0.0-beta.3",
+    "picturefill": "~2.3.1"
+  }
+}

@@ -1,0 +1,23 @@
+.join-us {
+	padding: 40px 0;
+	background: url('../images/contact-us-bg-480.jpg') no-repeat center;
+	text-align: center;
+
+	@include mq(mobile-land) {
+		background-image: url('../images/contact-us-bg-768.jpg')
+	}
+
+	@include mq(tablet) {
+		background-image: url('../images/contact-us-bg-1024.jpg')
+	}
+
+	@include mq(tablet-land) {
+		padding: 80px 0;
+		background-image: url('../images/contact-us-bg-1366.jpg')
+	}
+
+	@include mq(desktop) {
+		padding: 91px 0 103px;
+		background-image: url('../images/contact-us-bg.jpg')
+	}
+}

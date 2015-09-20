@@ -1,0 +1,70 @@
+.btn {
+	display: inline-block;
+	padding: 0 10px;
+	font-size: 14px;
+	line-height: 33px;
+	text-decoration: none;
+	border-radius: 3px;
+
+	@include mq(mobile-land) {
+		padding: 0 20px;
+	}
+
+	@include mq(tablet) {
+		padding: 0 31px;
+	}
+
+	&_small {
+		font-size: 11px;
+		line-height: 27px;
+		padding: 0 12px;
+	}
+
+	&_medium {
+		padding: 0 20px;
+		line-height: 42px;
+	}
+
+	&_large {
+		padding: 0 40px;
+		font-size: 17px;
+		line-height: 62px;
+		font-weight: 700;
+
+		@include mq(tablet) {
+			padding: 0 78px;
+		}
+	}
+
+	&_orange {
+		color: $white;
+		background-color: $button-orange;
+
+		&:hover,
+		&:focus {
+			color: $orange;
+			background-color: $button-orange-hover;
+		}
+	}
+
+	&_white {
+		color: $black;
+		background-color: $button-white;
+
+		&:hover,
+		&:focus {
+			color: $white;
+			background-color: $button-white-hover;
+		}
+	}
+
+	&_blue {
+		color: $white;
+		background-color: $button-blue;
+
+		&:hover,
+		&:focus {
+			background-color: $button-blue-hover;
+		}
+	}
+}

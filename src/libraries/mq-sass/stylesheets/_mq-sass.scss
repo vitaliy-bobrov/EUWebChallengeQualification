@@ -1,0 +1,67 @@
+// ==================================================
+// Imports
+// ==================================================
+@import "mq-sass/settings.scss";
+@import "mq-sass/functions.scss";
+
+// ==================================================
+// mq Mixin
+// ==================================================
+@mixin mq($breakpoint, $minmax: min) {
+  @if $breakpoint == landscape or $breakpoint == portrait or $breakpoint == retina or map-has-key($mq-breakpoints, $breakpoint) or type-of($breakpoint) == "number" {
+    $media: $mq-media;
+    $media-query: "";
+
+    @if ($media == false) {
+      $media: "";
+    }
+    @else {
+      $media: $media + " and ";
+    }
+
+    @if $breakpoint == landscape or $breakpoint == portrait {
+      $media-query: "#{$media} (orientation: #{$breakpoint})";
+    }
+    @else if $breakpoint == retina {
+      $media-query: "#{$media} (-webkit-min-device-pixel-ratio: 2)," +
+                    "#{$media} (min-resolution: 2dppx)";
+    }
+    @else {
+      @if $minmax != min and $minmax != max {
+        @warn "The second parameter of `mq()` only accepts value of `min` or `max`. "
+            + "Falling back to the default, `min`.";
+        $minmax: min;
+      }
+
+      $value: $breakpoint;
+
+      @if map-has-key($mq-breakpoints, $breakpoint) {
+        $value: map-get($mq-breakpoints, $breakpoint);
+      }
+
+      $value: strip-units($value);
+
+      // @if $minmax == max {
+      //   $value: $value - 1;
+      // }
+
+      @if ($mq-ems == true) {
+        $value: em($value, $mq-em-base);
+      }
+      @else {
+        $value: $value + px;
+      }
+
+      $media-query: "#{$media} (#{$minmax}-width: #{$value})";
+    }
+
+    @media #{$media-query} {
+      @content;
+    }
+  }
+  @else {
+    @warn "Invalid breakpoint value. It must be "
+        + "defined in the `$mq-breakpoints` map, a valid CSS value, "
+        + "or a predefined (e.g. retina, landscape, portrait).";
+  }
+}

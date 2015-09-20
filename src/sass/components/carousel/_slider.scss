@@ -1,0 +1,124 @@
+.owl-item {
+	will-change: opacity;
+}
+
+.slider {
+	.owl-nav {
+		@extend .container;
+		@extend .text-hidden;
+		position: absolute;
+		top: calc(50% - 30px);
+		left: 0;
+		right: 0;
+	}
+
+	.owl-prev,
+	.owl-next {
+		position: absolute;
+		width: $mobile-slider-nav;
+		height: $mobile-slider-nav;
+		background-color: $slider-nav;
+		background-repeat: no-repeat;
+		background-size: 23px auto;
+		transition: all .5s ease;
+
+		@include mq(tablet) {
+			width: $desktop-slider-nav;
+			height: $desktop-slider-nav;
+		}
+
+		&:hover {
+			background-color: $slider-nav-hover;
+		}
+	}
+
+	.owl-prev {
+		left: 0;
+		background-image: url('../images/arrow-left.svg');
+		background-position: 7px center;
+
+		@include mq(tablet) {
+			background-position: 17px center;
+		}
+	}
+
+	.owl-next {
+		right: 0;
+		background-image: url('../images/arrow-right.svg');
+		background-position: 11px center;
+
+		@include mq(tablet) {
+			background-position: 20px center;
+		}
+	}
+}
+
+.slide {
+	&__wrapper {
+		position: absolute;
+		top: 60px;
+		left: 0;
+		right: 0;
+		text-align: center;
+		color: $white;
+
+		@include mq(tablet) {
+			top: 31.6%;
+		}
+
+		&.container {
+			padding: 0 50px;
+
+			@include mq(tablet) {
+				padding: 0 3%;
+			}
+
+			@include mq(desktop) {
+				padding: 0;
+			}
+		}
+	}
+
+	&__text {
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 0 4px;
+		padding: 0 10px;
+		font-size: 14px;
+		line-height: 22px;
+		background-color: $slide-text-bg;
+
+		@include mq(tablet) {
+			padding: 0 18px;
+			font-size: 17px;
+			line-height: 32px;
+		}
+	}
+
+	&__heading {
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 0 12px;
+		padding: 0 10px;
+		font-size: 22px;
+		line-height: 28px;
+		font-weight: 700;
+		background-color: $slide-text-bg;
+
+		@include mq(tablet) {
+			margin-bottom: 16px;
+			padding: 0 18px;
+			font-size: 36px;
+			line-height: 47px;
+		}
+	}
+
+	&__link {
+		box-shadow: 0 0 4.75px 0.25px rgba($black, .2);
+
+		&:hover,
+		&:focus {
+			box-shadow: 0 0 8px 0.25px rgba($black, .2);
+		}
+	}
+}

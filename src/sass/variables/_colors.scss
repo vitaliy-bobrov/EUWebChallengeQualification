@@ -1,0 +1,42 @@
+// All colors.
+$black: #000;
+$white: #fff;
+$l-gray: #f3f3f3;
+$tundora: #444;
+$mine: #202020;
+$tine: #323232;
+$orange: #f36523;
+$facebook: #4660a3;
+$footer-facebook: #3b5998;
+$twitter: #55acee;
+$google-plus: #dd4b39;
+$blue: #27abff;
+$dove: #666666;
+$alto: #ddd;
+$dusty: #999;
+$alabaster: #fcfcfc;
+$shark: #1c1d1f;
+
+// Colors by element.
+$header-bg: $mine;
+$logo: $white;
+$logo-accent: $orange;
+$m-nav-link: $white;
+$m-nav-link-hover: $orange;
+$form-border: $tine;
+$button-orange: $orange;
+$button-orange-hover: $white;
+$button-white: $white;
+$button-white-hover: $orange;
+$button-blue: $blue;
+$button-blue-hover: darken($blue, 10%);
+$slide-text-bg: rgba($black, .8);
+$slider-nav: rgba($black, .5);
+$slider-nav-hover: $black;
+$cta-numbers: $tundora;
+$cta-divider-border: $alto;
+$cta-divider-bg: $alabaster;
+$cta-divider-text: $dusty;
+$footer-info: $shark;
+$credentials: $dove;
+$mobile-menu-toggle: $orange;

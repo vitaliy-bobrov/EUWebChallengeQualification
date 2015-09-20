@@ -1,0 +1,22 @@
+.auth {
+	&__login {
+		font-size: 14px;
+		text-decoration: none;
+		color: $m-nav-link;
+
+		&:hover,
+		&:focus {
+			color: $m-nav-link-hover;
+		}
+	}
+
+	&__register {
+		@extend .btn;
+		@extend .btn_orange;
+		margin-left: 15px;
+
+		@include mq(tablet) {
+			margin-left: 25px;
+		}
+	}
+}

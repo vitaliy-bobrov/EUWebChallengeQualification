@@ -1,0 +1,126 @@
+.search-form {
+
+	&__wrapper {
+		position: absolute;
+		top: 99%;
+		left: 0;
+		right: 0;
+		z-index: $under-content;
+		background-color: $form-border;		
+		width: 100%;
+		padding: 13px 0;
+		transform: translateX(-200%);	
+		transition: transform .5s ease, z-index 0s linear .5s;
+
+		@include mq(tablet) {
+			box-shadow: 500px 0 0 0 $form-border, -500px 0 0 0 $form-border;
+		}
+
+		@include mq(tablet-land) {
+			top: 100%;
+			box-shadow: 1000px 0 0 0 $form-border, -1000px 0 0 0 $form-border;
+		}
+
+		.container {
+			position: relative;
+		}		
+	}
+
+	&__label {
+		display: block;
+		width: 26px;
+		margin-right: 15px;
+		height: $desktop-form-icon-label-height + 1;
+		border-left: 1px solid $form-border;
+		border-right: 1px solid $form-border;
+		user-select: none;
+
+		@include mq(mobile-land) {
+			width: 36px;
+		}
+
+		@include mq(tablet) {
+			width: 46px;
+			margin-right: 25px;
+		}
+
+		@include mq(tablet-land) {
+			height: $desktop-form-icon-label-height;
+		}
+
+		.search-form__icon_close {
+			display: none;
+		}
+
+		&:hover,
+		&:focus {
+			background-color: $form-border;
+			
+			.search-form__icon_search {
+				fill: $m-nav-link-hover;
+			}
+		}
+
+		&.active {
+			background-color: $form-border;
+
+			.search-form__icon_search {
+				display: none;
+			}
+
+			.search-form__icon_close {
+				display: block;
+				fill: $dusty;
+			}
+
+			& + .search-form__wrapper {
+				z-index: $overlay;
+				transform: translateX(0);
+				transition: transform .5s ease;
+			}
+		}
+	}
+
+	&__icon {
+		width: 13px;
+	}
+
+	&__field {
+		display: block;		
+		width: 80%;
+		height: 32px;
+		margin: 0 auto;
+		padding: 7px 15px 7px 50px;
+		font-size: 16px;
+		line-height: 18px;
+		border: 0;
+		border-radius: 3px;
+
+		@include mq(tablet-land) {
+			width: 60.6140350877%;
+			padding-left: 38px;
+		}
+
+		&:focus {
+			box-shadow: 0 0 12px 0 rgba($orange, .5);
+		}
+	}
+
+	&__submit {
+		background-color: transparent;
+		border: 0;
+		position: absolute;
+		top: 9px;
+		left: 15%;
+
+		@include mq(tablet-land) {
+			left: 20.54385964912281%;
+		}
+
+		svg {
+			display: block;
+			width: 13px;
+			fill: $orange;
+		}
+	}
+}

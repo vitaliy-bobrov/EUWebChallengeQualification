@@ -1,0 +1,46 @@
+{
+  "name": "mq-sass",
+  "version": "0.2.0",
+  "description": "Lightweight Sass library to manage responsive breakpoints and generate to media queries",
+  "license": "MIT",
+  "author": {
+    "name": "Jonathan Suh",
+    "email": "hello@jonsuh.com",
+    "url": "https://jonsuh.com"
+  },
+  "main": "stylesheets/_mq.scss",
+  "keywords": [
+    "breakpoints",
+    "css",
+    "sass",
+    "scss",
+    "media query",
+    "media queries",
+    "responsive"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonsuh/mq-sass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonsuh/mq-sass/issues"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/jonsuh/mq-sass",
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.0",
+    "commit": "fd699067b305cdb8ca5765f26ebf1fe7796b020a"
+  },
+  "_source": "git://github.com/jonsuh/mq-sass.git",
+  "_target": "~0.2.0",
+  "_originalSource": "mq-sass",
+  "_direct": true
+}

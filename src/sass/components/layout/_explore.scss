@@ -1,0 +1,176 @@
+.explore {
+	padding: 30px 0;
+	font-size: 0;
+	background-color: $l-gray;
+
+	@include mq(tablet) {
+		padding: 40px 0;
+	}
+
+	@include mq(tablet-land) {
+		padding: 52px 0 50px;
+	}
+
+	&__more {
+		float: right;
+	}
+
+
+	&__title {
+		margin: 0 0 17px;
+		font-size: 26px;
+		line-height: 26px;
+		font-weight: 400;	
+
+		@include mq(tablet) {
+			font-size: 32px;
+			line-height: 32px;
+		}	
+
+		@include mq(tablet-land) {
+			font-size: 36px;
+			line-height: 36px;
+		}
+	}
+
+	&__article {		
+		width: 100%;
+		max-width: 300px;
+		margin: 0 auto 30px;
+
+		@include mq(tablet) {
+			display: inline-block;
+			vertical-align: top;
+			width: 48%;
+			max-width: initial;
+			margin: 0 0 31px 4%;
+
+			&:nth-of-type(2n-1) {
+				margin-left: 0;
+			}
+		}		
+
+		@include mq(tablet-land) {
+			width: 22.763157895%;
+			margin-left: 2.98245614%;
+
+			&:nth-of-type(2n-1) {
+				margin-left: 2.98245614%;
+			}
+
+			&:nth-of-type(4n-3) {
+				margin-left: 0;
+			}
+		}		
+	}
+}
+
+.explore-article {
+	background-color: $white;
+	border-radius: 3px;
+	transition: all .3s linear;
+
+	&:hover {
+		box-shadow: -1px 1px 8px 0 rgba($black, .35);
+
+		.explore-article__title {
+			color: $blue;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	&__content {
+		padding: 14px;
+	}
+
+	&__footer {
+		border-top: 1px solid $alto;
+	}
+
+	&__image {
+		display: block;
+		width: 100%;
+		transition: all .3s linear;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__image-link {
+		display: block;
+		font-size: 0;
+		line-height: 0;
+
+		&:hover,
+		&:focus {
+			filter: contrast(110%) sepia(10%) grayscale(75%);
+		}
+	}
+
+	&__title {
+		margin: 0 0 10px;
+		font-size: 16px;
+		line-height: 18px;
+		font-weight: 400;
+		color: $black;
+		transition: all .3s linear;
+	}
+
+	&__competitors,
+	&__description {		
+		font-size: 13px;
+		line-height: 18px;		
+		color: $dusty;
+	}
+
+	&__competitors {
+		margin : 0 0 10px;
+		font-weight: 700;
+	}
+
+	&__description {
+		margin: 0;
+	}
+
+	&__status,
+	&__goal {
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+		padding: 11px 0 7px 15px;
+		font-size: 12px;
+		line-height: 20px;
+		color: $mine;
+
+		&:before {
+			display: block;
+			font-size: 10px;
+			line-height: 16px;
+			text-transform: uppercase;
+			color: $dusty;
+		}
+	}
+
+	&__status {
+		border-right: 1px solid $alto;
+
+		&:before {
+			content: 'Status';
+		}
+	}
+
+	&__goal {
+		&:before {
+			content: 'Goal';
+		}
+	}
+}
+
+.status-money {
+	padding-left: 26px;
+	background: url('../images/fund.png') no-repeat left center;
+}

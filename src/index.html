@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="EU Web Challenge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EU Web Challenge</title>
+
+    <!-- Add to homescreen -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image" href="favicon.png">
+    <!-- Fallback to homescreen for Chrome <39 on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="EU Web Challenge">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="EU Web Challenge">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#27abff">
+    
+    <meta name="theme-color" content="#27abff">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container page-header__wrapper">
+            <a href="/" class="site-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid" width="121.938" height="31.313" viewbox="0 0 121.938 32.313"><path d="M80.766 26.594c-2.8 3.15-6.36 4.726-10.684 4.726-4.22 0-7.832-1.523-10.84-4.57-3.008-3.06-4.512-6.732-4.512-11.016 0-4.375 1.53-8.086 4.59-11.132 3.06-3.06 6.784-4.59 11.172-4.59 2.357 0 4.557.48 6.602 1.438 1.953.96 3.873 2.518 5.76 4.675l-3.24 3.105c-2.475-3.294-5.49-4.94-9.044-4.94-3.19 0-5.866 1.1-8.027 3.3-2.162 2.16-3.242 4.87-3.242 8.125 0 3.36 1.205 6.126 3.614 8.3 2.253 2.02 4.694 3.028 7.324 3.028 2.24 0 4.25-.753 6.035-2.26 1.784-1.52 2.78-3.338 2.99-5.455h-7.52V15.05h12.46v.997c0 2.266-.267 4.27-.8 6.016-.522 1.614-1.4 3.124-2.637 4.53zM32.594 31.3c-3.894 0-7.39-1.347-10.49-4.042-3.41-2.982-5.116-6.888-5.116-11.72 0-4.244 1.556-7.89 4.668-10.936 3.1-3.047 6.823-4.57 11.172-4.57 4.297 0 7.982 1.536 11.055 4.61 3.086 3.072 4.63 6.763 4.63 11.073 0 4.336-1.55 8.014-4.65 11.035-3.112 3.034-6.868 4.55-11.27 4.55zM40.7 7.588C38.563 5.4 35.92 4.31 32.77 4.31c-3.14 0-5.788 1.09-7.95 3.277-2.16 2.16-3.242 4.827-3.242 8 0 3.332 1.12 6.07 3.36 8.217 2.226 2.146 4.797 3.22 7.714 3.22 3.164 0 5.833-1.093 8.008-3.28 2.175-2.21 3.262-4.904 3.262-8.078 0-3.213-1.074-5.906-3.223-8.08zM-.013.597h4.55v25.88h8.868v4.277H-.012V.598z" class="logo"/><path d="M117.297 26.75c-3.112 3.034-6.87 4.55-11.27 4.55-3.893 0-7.39-1.347-10.488-4.042-3.413-2.982-5.118-6.888-5.118-11.72 0-4.244 1.556-7.89 4.668-10.936 3.1-3.047 6.823-4.57 11.172-4.57 4.297 0 7.98 1.536 11.054 4.61 3.086 3.072 4.63 6.763 4.63 11.073 0 4.336-1.55 8.014-4.65 11.035zm-3.164-19.163c-2.136-2.186-4.78-3.278-7.93-3.278-3.138 0-5.788 1.09-7.95 3.277-2.16 2.16-3.24 4.827-3.24 8 0 3.332 1.118 6.07 3.358 8.217 2.228 2.146 4.8 3.22 7.716 3.22 3.164 0 5.833-1.093 8.008-3.28 2.174-2.21 3.26-4.904 3.26-8.078 0-3.213-1.073-5.906-3.22-8.08z" class="logo-accent"/></svg>
+            </a>
+            <!-- Main Nav -->
+            <nav role="navigation" class="main-navigation js-menu" id="menu">
+                <ul class="main-navigation__wrapper">
+                    <li class="main-navigation__item">
+                        <a href="#create" class="main-navigation__link js-menu-link text-uppercase">Create</a>
+                    </li>
+                    <li class="main-navigation__item">
+                        <a href="#explore" class="main-navigation__link js-menu-link text-uppercase">Explore</a>
+                    </li>
+                    <li class="main-navigation__item">
+                        <a href="#create" class="main-navigation__link js-menu-link text-uppercase">How it works</a>
+                    </li>
+                    <li class="main-navigation__item">
+                        <a href="#news" class="main-navigation__link js-menu-link text-uppercase">News</a>
+                    </li>
+                    <li class="main-navigation__item">
+                        <a href="#about" class="main-navigation__link js-menu-link text-uppercase">About us</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Search Form -->
+            <form action="/" method="POST" class="search-form">
+                <label for="search-field" class="label search-form__label text-hidden js-search-toggle" title="Open search" aria-controls="search">Open search 
+                    <svg class="icon label__icon search-form__icon search-form__icon_search" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 250.313 250.313"><path d="M244.186 214.604l-54.38-54.378c-.288-.29-.627-.49-.93-.76 10.7-16.23 16.946-35.66 16.946-56.554C205.822 46.075 159.747 0 102.912 0S0 46.075 0 102.91c0 56.836 46.074 102.912 102.91 102.912 20.895 0 40.323-6.245 56.554-16.945.27.3.47.64.76.93l54.38 54.38c8.168 8.167 21.412 8.167 29.582 0 8.168-8.17 8.168-21.414 0-29.583zM102.91 170.146c-37.133 0-67.235-30.102-67.235-67.235 0-37.133 30.103-67.235 67.236-67.235s67.236 30.103 67.236 67.236c0 37.134-30.103 67.236-67.235 67.236z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+                    <svg class="icon label__icon search-form__icon search-form__icon_close" xmlns="http://www.w3.org/2000/svg" width="339.177" height="339.177" viewbox="0 0 339.177 339.177"><path d="M247.244 169.59l83.938-83.938c5.332-5.327 7.994-11.798 7.994-19.414 0-7.614-2.67-14.084-7.994-19.414l-38.827-38.83c-5.33-5.33-11.8-7.994-19.41-7.994-7.618 0-14.086 2.665-19.418 7.993L169.59 91.93 85.65 7.994C80.326 2.665 73.855 0 66.238 0c-7.61 0-14.083 2.665-19.414 7.993l-38.83 38.83C2.668 52.15 0 58.624 0 66.24c0 7.616 2.664 14.084 7.994 19.414L91.93 169.59 7.995 253.528C2.667 258.858 0 265.328 0 272.945c0 7.61 2.664 14.082 7.994 19.41l38.83 38.828c5.33 5.332 11.803 7.994 19.414 7.994 7.616 0 14.084-2.67 19.414-7.994l83.94-83.938 83.943 83.938c5.328 5.332 11.793 7.994 19.417 7.994 7.61 0 14.082-2.67 19.41-7.994l38.82-38.828c5.333-5.324 7.995-11.8 7.995-19.41 0-7.618-2.662-14.086-7.994-19.417l-83.94-83.938z"/></svg>
+                </label>
+                <div class="search-form__wrapper" id="search">
+                    <div class="container">
+                        <button type="submit" class="search-form__submit" title="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 250.313 250.313"><path d="M244.186 214.604l-54.38-54.378c-.288-.29-.627-.49-.93-.76 10.7-16.23 16.946-35.66 16.946-56.554C205.822 46.075 159.747 0 102.912 0S0 46.075 0 102.91c0 56.836 46.074 102.912 102.91 102.912 20.895 0 40.323-6.245 56.554-16.945.27.3.47.64.76.93l54.38 54.38c8.168 8.167 21.412 8.167 29.582 0 8.168-8.17 8.168-21.414 0-29.583zM102.91 170.146c-37.133 0-67.235-30.102-67.235-67.235 0-37.133 30.103-67.235 67.236-67.235s67.236 30.103 67.236 67.236c0 37.134-30.103 67.236-67.235 67.236z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+                        Search</button>
+                        <input type="text" id="search-field" class="search-form__field">                    
+                    </div>
+                </div>
+            </form>
+            <!-- Login/Register -->
+            <div class="auth">
+                <a href="#login" class="auth__login">Sign in</a>
+                <a href="#join-us" class="auth__register text-uppercase">Join us</a>
+            </div>
+            <!-- Facebook -->
+            <div class="facebook-widget">
+                <a href="//www.facebook.com/bobrov1989" target="_blank" class="facebook-widget__link text-hidden" title="Find us in facebook">Facebook</a>
+            </div>
+            <!-- Hamburger icon -->
+            <a href="#" class="mobile-menu-toggle js-menu-toggle" aria-controls="menu">Menu</a>
+        </div>        
+    </header>
+    <!-- Slider -->
+    <section role="banner" class="slider js-owl-carousel-slider owl-carousel">
+        <div class="slide slider__item">
+            <picture class="slide__bg"> 
+                <source srcset="images/slider/slide-1.webp" media="(min-width: 1400px)" type="image/webp"/>
+                <source srcset="images/slider/slide-1-1366.webp" media="(min-width: 1200px)" type="image/webp"/>
+                <source srcset="images/slider/slide-1-1366.jpg" media="(min-width: 1200px)" />
+                <source srcset="images/slider/slide-1-1024.webp" media="(min-width: 1024px)" type="image/webp"/>
+                <source srcset="images/slider/slide-1-1024.jpg" media="(min-width: 1024px)" />
+                <source srcset="images/slider/slide-1-768.webp" media="(min-width: 768px)" type="image/webp"/>
+                <source srcset="images/slider/slide-1-768.jpg" media="(min-width: 768px)" />
+                <source srcset="images/slider/slide-1-480.webp" media="(min-width: 480px)" type="image/webp"/>
+                <source srcset="images/slider/slide-1-480.jpg" media="(min-width: 480px)" />
+                <source srcset="images/slider/slide-1-320.webp" media="(min-width: 320px)" type="image/webp"/>
+                <source srcset="images/slider/slide-1-320.jpg" media="(min-width: 320px)" />
+                <img src="images/slider/slide-1.jpg" alt="slide" sizes="100vw"/>
+            </picture>            
+            <div class="slide__wrapper container">
+                <p class="slide__text">Create &amp; Solve Innovation Challenges Such As:</p>
+                <br>
+                <h2 class="slide__heading text-uppercase">The Featured Challenge</h2>
+                <br>
+                <a href="#" class="slide__link btn btn_white btn_medium">Learn more</a>
+            </div>
+        </div>
+        <div class="slide slider__item">
+            <picture class="slide__bg">
+                <source srcset="images/slider/slide-2.webp" media="(min-width: 1400px)" type="image/webp"/>
+                <source srcset="images/slider/slide-2-1366.webp" media="(min-width: 1200px)" type="image/webp"/>
+                <source srcset="images/slider/slide-2-1366.jpg" media="(min-width: 1200px)" />
+                <source srcset="images/slider/slide-2-1024.webp" media="(min-width: 1024px)" type="image/webp"/>
+                <source srcset="images/slider/slide-2-1024.jpg" media="(min-width: 1024px)" />
+                <source srcset="images/slider/slide-2-768.webp" media="(min-width: 768px)" type="image/webp"/>
+                <source srcset="images/slider/slide-2-768.jpg" media="(min-width: 768px)" />
+                <source srcset="images/slider/slide-2-480.webp" media="(min-width: 480px)" type="image/webp"/>
+                <source srcset="images/slider/slide-2-480.jpg" media="(min-width: 480px)" />
+                <source srcset="images/slider/slide-2-320.webp" media="(min-width: 320px)" type="image/webp"/>
+                <source srcset="images/slider/slide-2-320.jpg" media="(min-width: 320px)" />
+                <img src="images/slider/slide-2.jpg" alt="slide" sizes="100vw"/>
+            </picture>   
+            <div class="slide__wrapper container">
+                <p class="slide__text">Create &amp; Solve Innovation Challenges Such As:</p>
+                <br>
+                <h2 class="slide__heading text-uppercase">The Featured Challenge</h2>
+                <br>
+                <a href="#" class="slide__link btn btn_white btn_medium">Learn more</a>
+            </div>
+        </div>
+    </section>
+    <section id="create" class="creation">
+        <!-- Video -->
+        <div class="youtube js-player-wrapper">
+            <div id="youtube-video-container" class="youtube__video-container" aria-hidden="true"></div> 
+            <picture class="youtube__thumbnail">
+                <source srcset="images/video/thumbnail.webp" media="(min-width: 1400px)" type="image/webp"/>
+                <source srcset="images/video/thumbnail-1366.webp" media="(min-width: 1366px)" type="image/webp"/>
+                <source srcset="images/video/thumbnail-1366.jpg" media="(min-width: 1366px)" />
+                <source srcset="images/video/thumbnail-1024.webp" media="(min-width: 1024px)" type="image/webp"/>
+                <source srcset="images/video/thumbnail-1024.jpg" media="(min-width: 1024px)" />
+                <source srcset="images/video/thumbnail-768.webp" media="(min-width: 768px)" type="image/webp"/>
+                <source srcset="images/video/thumbnail-768.jpg" media="(min-width: 768px)" />
+                <source srcset="images/video/thumbnail-480.webp" media="(min-width: 320px)" type="image/webp"/>
+                <source srcset="images/video/thumbnail-480.jpg" media="(min-width: 320px)" />
+                <img src="images/video/thumbnail.jpg" alt="video" sizes="100vw"/>
+            </picture> 
+            <div class="youtube__wrapper">
+                <h3 class="youtube__title text-uppercase">The title of the video</h3>  
+                <a href="#" class="youtube__play js-play-video text-hidden" data-video-id="QiWA3ngx4fY" aria-controls="youtube-video-container">Play video</a>
+            </div>
+        </div>
+        <!-- Carousel -->
+        <div class="carousel creation__carousel js-owl-carousel-slider owl-carousel">
+            <div class="carousel-item carousel__item carousel__item_blue">
+                <div class="carousel-item__wrapper">
+                    <div class="carousel-item__icon">
+                        <picture>
+                            <source
+                                srcset="images/carousel/slide-1-icon.webp"
+                            type="image/webp" />
+                            <img src="images/carousel/slide-1-icon.png" alt="icon" />
+                        </picture> 
+                    </div>
+                    <h3 class="carousel-item__heading">Create</h3>
+                    <p class="carousel-item__text">Where in your company, organization or community are you hitting a wall? We take your problems and re-arrange them into a series of measurable targets that competitors must achieve for your challenge to be met and the prize to be won</p>
+                </div>                
+            </div>
+            <div class="carousel-item carousel__item carousel__item_gray">
+                <div class="carousel-item__wrapper">
+                    <div class="carousel-item__icon">
+                        <picture>
+                            <source
+                                srcset="images/carousel/slide-2-icon.webp"
+                            type="image/webp" />
+                            <img src="images/carousel/slide-2-icon.png" alt="icon" />
+                        </picture> 
+                    </div>
+                    <h3 class="carousel-item__heading">Help fund the price</h3>
+                    <p class="carousel-item__text">If your challenge is not sponsored, we provide you with the tools to get it funded. We have experts in online promotion and content production and can help chart your journey to a fully funded challenge</p>
+                </div>
+            </div>
+            <div class="carousel-item carousel__item carousel__item_orange">
+                <div class="carousel-item__wrapper">
+                    <div class="carousel-item__icon">
+                        <picture>
+                            <source
+                                srcset="images/carousel/slide-3-icon.webp"
+                            type="image/webp" />
+                            <img src="images/carousel/slide-3-icon.png" alt="icon" />
+                        </picture> 
+                    </div>
+                    <h3 class="carousel-item__heading">Compete</h3>
+                    <p class="carousel-item__text">Innovators from all over the world use HeroX to find challenges in which to compete - to create breakthroughs in technology, health, education, economies and communities, and win prizes up to $1 million</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call to action -->
+    <section class="cta container">
+        <div class="cta__item cta-item">
+            <picture class="cta-item__icon">
+                <source srcset="images/cta/cta-icon-prize.webp" type="image/webp" />
+                <img src="images/cta/cta-icon-prize.png" alt="icon" />
+            </picture>
+            <h4 class="cta-item__heading">in prizes</h4>
+            <p class="cta-item__numbers">$4,000,000</p>
+        </div>
+        <div class="cta__divider cta-divider">
+            <div class="cta-divider__wrapper">
+                <div class="cta-divider__icon"></div>
+                <p class="cta-divider__text">the impact counter</p>
+            </div>
+        </div>
+        <div class="cta__item cta-item">
+            <picture class="cta-item__icon">
+                <source srcset="images/cta/cta-icon-people.webp" type="image/webp" />
+                <img src="images/cta/cta-icon-people.png" alt="icon" />
+            </picture>
+            <h4 class="cta-item__heading">Crazy Dreamers</h4>
+            <p class="cta-item__numbers">+250,000</p>
+        </div>
+        <div class="cta__action">
+            <a href="#join-us" class="cta__link btn btn_orange btn_large text-uppercase">Join the community</a>
+        </div>            
+    </section>
+    <!-- Main content -->   
+    <main class="page-content">
+        <!-- Explore articles -->
+        <section id="explore" class="explore">
+            <div class="container">
+                <a href="#" class="explore__more btn btn_blue btn_small text-uppercase">See all</a>
+                <h2 class="explore__title">Explore the Challenges</h2>
+                <article class="explore__article explore-article">
+                    <header class="explore-article__header">
+                        <a href="#" class="explore-article__image-link">
+                            <picture class="explore-article__image">
+                                <source srcset="images/articles/explore-1.webp" type="image/webp" />
+                                <img src="images/articles/explore-1.jpg" alt="image" />
+                            </picture>
+                        </a>
+                    </header>
+                    <main class="explore-article__content">
+                        <a href="#"><h3 class="explore-article__title">The Rockefeller Foundation Storytelling Challenge</h3></a>
+                        <p class="explore-article__competitors">167 competitors</p>
+                        <p class="explore-article__description">A challenge to spur Rockefeller Foundation non-profit grantees to share the impact they have had on individuals, communities and the world best</p>
+                    </main>
+                    <footer class="explore-article__footer">
+                        <div class="explore-article__status">
+                            <div class="status-money">Fund the Prize</div>
+                        </div>
+                        <div class="explore-article__goal">
+                            $5,000
+                        </div>
+                    </footer>
+                </article>
+                <article class="explore__article explore-article">
+                    <header class="explore-article__header">
+                        <a href="#" class="explore-article__image-link">
+                            <picture class="explore-article__image">
+                                <source srcset="images/articles/explore-2.webp" type="image/webp" />
+                                <img src="images/articles/explore-2.jpg" alt="image" />
+                            </picture>
+                        </a>
+                    </header>
+                    <main class="explore-article__content">
+                        <a href="#"><h3 class="explore-article__title">The Rockefeller Foundation Storytelling Challenge</h3></a>
+                        <p class="explore-article__competitors">167 competitors</p>
+                        <p class="explore-article__description">A challenge to spur Rockefeller Foundation non-profit grantees to share the impact they have had on individuals, communities and the world best</p>
+                    </main>
+                    <footer class="explore-article__footer">
+                        <div class="explore-article__status">
+                            <div class="status-money">Fund the Prize</div>
+                        </div>
+                        <div class="explore-article__goal">
+                            $5,000
+                        </div>
+                    </footer>
+                </article>
+                <article class="explore__article explore-article">
+                    <header class="explore-article__header">
+                        <a href="#" class="explore-article__image-link">
+                            <picture class="explore-article__image">
+                                <source srcset="images/articles/explore-3.webp" type="image/webp" />
+                                <img src="images/articles/explore-3.jpg" alt="image" />
+                            </picture>
+                        </a>
+                    </header>
+                    <main class="explore-article__content">
+                        <a href="#"><h3 class="explore-article__title">The Rockefeller Foundation Storytelling Challenge</h3></a>
+                        <p class="explore-article__competitors">167 competitors</p>
+                        <p class="explore-article__description">A challenge to spur Rockefeller Foundation non-profit grantees to share the impact they have had on individuals, communities and the world best</p>
+                    </main>
+                    <footer class="explore-article__footer">
+                        <div class="explore-article__status">
+                            <div class="status-money">Fund the Prize</div>
+                        </div>
+                        <div class="explore-article__goal">
+                            $5,000
+                        </div>
+                    </footer>
+                </article>
+                <article class="explore__article explore-article">
+                    <header class="explore-article__header">
+                        <a href="#" class="explore-article__image-link">
+                            <picture class="explore-article__image">
+                                <source srcset="images/articles/explore-4.webp" type="image/webp" />
+                                <img src="images/articles/explore-4.jpg" alt="image" />
+                            </picture>
+                        </a>
+                    </header>
+                    <main class="explore-article__content">
+                        <a href="#"><h3 class="explore-article__title">The Rockefeller Foundation Storytelling Challenge</h3></a>
+                        <p class="explore-article__competitors">167 competitors</p>
+                        <p class="explore-article__description">A challenge to spur Rockefeller Foundation non-profit grantees to share the impact they have had on individuals, communities and the world best</p>
+                    </main>
+                    <footer class="explore-article__footer">
+                        <div class="explore-article__status">
+                            <div class="status-money">Fund the Prize</div>
+                        </div>
+                        <div class="explore-article__goal">
+                            $5,000
+                        </div>
+                    </footer>
+                </article>
+                <article class="explore__article explore-article">
+                    <header class="explore-article__header">
+                        <a href="#" class="explore-article__image-link">
+                            <picture class="explore-article__image">
+                                <source srcset="images/articles/explore-5.webp" type="image/webp" />
+                                <img src="images/articles/explore-5.jpg" alt="image" />
+                            </picture>
+                        </a>
+                    </header>
+                    <main class="explore-article__content">
+                        <a href="#"><h3 class="explore-article__title">The Rockefeller Foundation Storytelling Challenge</h3></a>
+                        <p class="explore-article__competitors">167 competitors</p>
+                        <p class="explore-article__description">A challenge to spur Rockefeller Foundation non-profit grantees to share the impact they have had on individuals, communities and the world best</p>
+                    </main>
+                    <footer class="explore-article__footer">
+                        <div class="explore-article__status">
+                            <div class="status-money">Fund the Prize</div>
+                        </div>
+                        <div class="explore-article__goal">
+                            $5,000
+                        </div>
+                    </footer>
+                </article>
+                <article class="explore__article explore-article">
+                    <header class="explore-article__header">
+                        <a href="#" class="explore-article__image-link">
+                            <picture class="explore-article__image">
+                                <source srcset="images/articles/explore-6.webp" type="image/webp" />
+                                <img src="images/articles/explore-6.jpg" alt="image" />
+                            </picture>
+                        </a>
+                    </header>
+                    <main class="explore-article__content">
+                        <a href="#"><h3 class="explore-article__title">The Rockefeller Foundation Storytelling Challenge</h3></a>
+                        <p class="explore-article__competitors">167 competitors</p>
+                        <p class="explore-article__description">A challenge to spur Rockefeller Foundation non-profit grantees to share the impact they have had on individuals, communities and the world best</p>
+                    </main>
+                    <footer class="explore-article__footer">
+                        <div class="explore-article__status">
+                            <div class="status-money">Fund the Prize</div>
+                        </div>
+                        <div class="explore-article__goal">
+                            $5,000
+                        </div>
+                    </footer>
+                </article>
+                <article class="explore__article explore-article">
+                    <header class="explore-article__header">
+                        <a href="#" class="explore-article__image-link">
+                            <picture class="explore-article__image">
+                                <source srcset="images/articles/explore-7.webp" type="image/webp" />
+                                <img src="images/articles/explore-7.jpg" alt="image" />
+                            </picture>
+                        </a>
+                    </header>
+                    <main class="explore-article__content">
+                        <a href="#"><h3 class="explore-article__title">The Rockefeller Foundation Storytelling Challenge</h3></a>
+                        <p class="explore-article__competitors">167 competitors</p>
+                        <p class="explore-article__description">A challenge to spur Rockefeller Foundation non-profit grantees to share the impact they have had on individuals, communities and the world best</p>
+                    </main>
+                    <footer class="explore-article__footer">
+                        <div class="explore-article__status">
+                            <div class="status-money">Fund the Prize</div>
+                        </div>
+                        <div class="explore-article__goal">
+                            $5,000
+                        </div>
+                    </footer>
+                </article>
+                <article class="explore__article explore-article">
+                    <header class="explore-article__header">
+                        <a href="#" class="explore-article__image-link">
+                            <picture class="explore-article__image">
+                                <source srcset="images/articles/explore-8.webp" type="image/webp" />
+                                <img src="images/articles/explore-8.jpg" alt="image" />
+                            </picture>
+                        </a>
+                    </header>
+                    <main class="explore-article__content">
+                        <a href="#"><h3 class="explore-article__title">The Rockefeller Foundation Storytelling Challenge</h3></a>
+                        <p class="explore-article__competitors">167 competitors</p>
+                        <p class="explore-article__description">A challenge to spur Rockefeller Foundation non-profit grantees to share the impact they have had on individuals, communities and the world best</p>
+                    </main>
+                    <footer class="explore-article__footer">
+                        <div class="explore-article__status">
+                            <div class="status-money">Fund the Prize</div>
+                        </div>
+                        <div class="explore-article__goal">
+                            $5,000
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </section>
+        <!-- News articles --> 
+        <section id="news" class="news container">
+            <a href="#" class="news__more btn btn_blue btn_small text-uppercase">See all</a>
+            <h2 class="news__title">Recent News</h2>
+            <article class="news__article news-article">
+                <header class="news-article__header">
+                    <a href="#" class="news-article__image-link">
+                        <picture class="news-article__image">
+                            <source srcset="images/articles/news-1.webp" type="image/webp" />
+                            <img src="images/articles/news-1.jpg" alt="image" />
+                        </picture>
+                    </a>
+                </header>
+                <main class="news-article__content">
+                    <a href="#"><h3 class="news-article__title">Immigrants More Likely to Be Entrepreneurs</h3></a>
+                    <p class="news-article__info">Posted by <a href="#" class="news-article__author">Jesus Salas</a> on Jan. 29, 2015</p>
+                </main>
+            </article>
+            <article class="news__article news-article">
+                <header class="news-article__header">
+                    <a href="#" class="news-article__image-link">
+                        <picture class="news-article__image">
+                            <source srcset="images/articles/news-2.webp" type="image/webp" />
+                            <img src="images/articles/news-2.jpg" alt="image" />
+                        </picture>
+                    </a>
+                </header>
+                <main class="news-article__content">
+                    <a href="#"><h3 class="news-article__title">Transforming Personal Health: The Nokia Sensing XChallenge</h3></a>
+                    <p class="news-article__info">Posted by <a href="#" class="news-article__author">Jesus Salas</a> on Jan. 29, 2015</p>
+                </main>
+            </article>
+            <article class="news__article news-article">
+                <header class="news-article__header">
+                    <a href="#" class="news-article__image-link">
+                        <picture class="news-article__image">
+                            <source srcset="images/articles/news-3.webp" type="image/webp" />
+                            <img src="images/articles/news-3.jpg" alt="image" />
+                        </picture>
+                    </a>
+                </header>
+                <main class="news-article__content">
+                    <a href="#"><h3 class="news-article__title">Getting More From Results: The Clinical Trial Innovation Prize</h3></a>
+                    <p class="news-article__info">Posted by <a href="#" class="news-article__author">Jesus Salas</a> on Jan. 29, 2015</p>
+                </main>
+            </article>
+        </section>
+        <section id="join-us" class="join-us">
+            <div class="container">
+                <form action="/" method="POST" class="join-us__form join-us-form">
+                    <label for="join-input" class="join-us-form__label">Become a part of the future!</label>
+                    <input type="text" id="join-input" placeholder="Sign up for the recent news, type in your e-mail" class="join-us-form__field">
+                    <button type="submit" class="join-us-form__submit text-hidden" title="Join us">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 334.5 334.5" fill="#fff"><path d="M332.797 13.7c-1.49-1.307-3.608-1.61-5.404-.777L2.893 163.695c-1.747.812-2.872 2.555-2.893 4.48s1.067 3.694 2.797 4.543l91.833 45.068c1.684.827 3.692.64 5.196-.484l89.287-66.734-70.094 72.1c-1 1.03-1.51 2.438-1.4 3.868l6.978 90.89c.155 2.013 1.505 3.735 3.424 4.366.513.168 1.04.25 1.56.25 1.43 0 2.82-.613 3.787-1.733l48.74-56.483 60.256 28.79c1.308.625 2.822.65 4.15.073 1.33-.58 2.342-1.705 2.776-3.087L334.27 18.956c.594-1.89.015-3.95-1.473-5.257z"/></svg>
+                    Join us</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Footer --> 
+    <footer class="page-footer">
+        <!-- Footer navigation --> 
+        <section id="about" class="page-footer__info">
+            <div class="container">
+                <nav class="footer-naviation">
+                    <h3 class="footer-naviation__title footer-naviation__title_border">About</h3>
+                    <ul class="footer-naviation__wrapper">
+                        <li class="footer-naviation__item">
+                            <a href="#about" class="footer-naviation__link">About us</a>
+                        </li>
+                        <li class="footer-naviation__item">
+                            <a href="#privacy-policy" class="footer-naviation__link">Privacy Policy</a>
+                        </li>
+                        <li class="footer-naviation__item">
+                            <a href="#terms" class="footer-naviation__link">Terms of Use</a>
+                        </li>
+                        <li class="footer-naviation__item">
+                            <a href="#news" class="footer-naviation__link">News</a>
+                        </li>
+                        <li class="footer-naviation__item">
+                            <a href="#events" class="footer-naviation__link">Events</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="footer-naviation">
+                    <h3 class="footer-naviation__title footer-naviation__title_border">Get Involved</h3>
+                    <ul class="footer-naviation__wrapper">
+                        <li class="footer-naviation__item">
+                            <a href="#work-with-us" class="footer-naviation__link">Work with Us</a>
+                        </li>
+                        <li class="footer-naviation__item">
+                            <a href="#join-us" class="footer-naviation__link">Subscribe for Newsletter</a>
+                        </li>
+                        <li class="footer-naviation__item">
+                            <a href="#forum" class="footer-naviation__link">Forum</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="footer-naviation">
+                    <h3 class="footer-naviation__title footer-naviation__title_border">Help Center</h3>
+                    <ul class="footer-naviation__wrapper">
+                        <li class="footer-naviation__item">
+                            <a href="#faq" class="footer-naviation__link">FAQs</a>
+                        </li>
+                        <li class="footer-naviation__item">
+                            <a href="#join-us" class="footer-naviation__link">Contact Us</a>
+                        </li>
+                        <li class="footer-naviation__item">
+                            <a href="#start" class="footer-naviation__link">How to Start a Challenge</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Social share --> 
+                <nav class="footer-naviation footer-naviation_social">
+                    <h3 class="footer-naviation__title">Connect with Us</h3>
+                    <a href="https://www.facebook.com/bobrov1989" class="footer-naviation__link footer-naviation__link_social footer-naviation__link_facebook" title="Facebook">Facebook</a>
+                    <a href="https://twitter.com/bobrov1989" class="footer-naviation__link footer-naviation__link_social footer-naviation__link_twitter" title="Twitter">Twitter</a>
+                    <a href="https://plus.google.com/+ВиталийБобров" class="footer-naviation__link footer-naviation__link_social footer-naviation__link_google-plus" title="Google+">Google+</a>
+                </nav>
+            </div>
+        </section>
+        <!-- Copyright --> 
+        <section class="credentials" role="contentinfo">
+            <div class="container credentials__text">© 2015  All Rights Reserved</div>      
+        </section>
+    </footer>
+    <!-- Libraries -->   
+    <script src="libraries/jquery.min.js"></script>
+    <script src="libraries/owl.carousel.min.js"></script>
+    <script src="libraries/picturefill.min.js" async defer></script>    
+    <!-- Scripts -->
+    <script src="js/main.min.js"></script>    
+  </body>
+</html>

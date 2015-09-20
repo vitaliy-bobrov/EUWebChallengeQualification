@@ -1,0 +1,51 @@
+.site-logo {
+	width: 20%;
+	margin-right: 15px;
+	line-height: 0;
+
+	@include mq(mobile-land) {
+		width: 28%;
+		margin-right: 20px;
+	}
+
+	@include mq(tablet) {
+		width: auto;
+		margin-right: 38%;
+	}
+
+	@include mq(tablet-land) {
+		margin-right: 20px;
+	}
+
+	@include mq(desktop) {
+		margin-right: 58px;
+	}
+
+	svg {
+		max-width: 100%;
+	}
+	
+	.logo,
+	.logo-accent {
+		transition: all .6s ease;
+	}
+
+	.logo {
+		fill: $logo;
+	}
+
+	.logo-accent {
+		fill: $logo-accent;
+	}
+
+	&:hover,
+	&:focus {
+		.logo {
+			fill: $logo-accent;
+		}
+
+		.logo-accent {
+			fill: $logo;
+		}
+	}
+}

@@ -1,0 +1,122 @@
+.cta {
+	padding-top: 30px;
+	text-align: center;
+
+	@include mq(tablet) {
+		padding-top: 53px;
+	}
+
+	&__item {	
+		@include mq(tablet-land) {
+			display: inline-block;
+			vertical-align: top;
+			width: 33.33%;
+		}
+	}
+
+	&__link {
+		margin-bottom: 30px;
+
+		@include mq(tablet) {
+			margin-bottom: 63px;
+		}
+
+		&:hover,
+		&:focus {
+			color: $white;
+			background-color: darken($orange, 10%);
+		}
+	}
+}
+
+.cta-item {
+	&__icon {
+		display: block;
+		margin: 0 auto 15px;
+	}
+
+	&__heading {
+		margin:  0 0 18px;
+		font-size: 21px;
+		line-height: 21px;
+		font-weight: 400;
+		color: $orange;
+	}
+
+	&__numbers {
+		margin: 0 0 30px;
+		font-size: 30px;
+		line-height: 30px;
+		color: $cta-numbers;
+
+		@include mq(tablet) {
+			margin-bottom: 40px;
+			font-size: 44px;
+			line-height: 44px;
+		}
+
+		@include mq(tablet-land) {
+			margin-bottom: 23px;
+			font-size: 60px;
+			line-height: 60px;
+		}
+	}
+}
+
+.cta-divider {
+	display: inline-block;
+	vertical-align: top;
+	width: 33.34%;
+
+	&__wrapper {
+		margin-bottom: 30px;
+		padding: 40px 0;
+		position: relative;
+
+		@include mq(tablet) {
+			margin-bottom: 40px;
+		}
+
+		@include mq(tablet-land) {
+			margin-bottom: 0;
+		}
+
+		&:before,
+		&:after {
+			content: '';
+			display: block;
+			width: 1px;
+			height: 28px;
+			background-color: $cta-divider-border;
+			transform: rotate(15deg);
+			position: absolute;
+		}
+
+		&:before {
+			top: 0;
+			right: 46%;
+		}
+
+		&:after {
+			bottom: 0;
+			left: 46%;
+		}
+	}
+
+	&__icon {
+		width: 41px;
+		height: 41px;
+		margin: 0 auto 9px;
+		border: 1px solid $cta-divider-border;
+		border-radius: 50%;
+		background: $cta-divider-bg url('../images/heart-icon.svg') no-repeat center;
+		background-size: 16px auto;
+	}
+
+	&__text {
+		margin: 0;
+		font-size: 14px;
+		line-height: 14px;
+		color: $cta-divider-text;
+	}
+}

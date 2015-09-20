@@ -1,0 +1,17 @@
+.label {
+	cursor: pointer;
+	position: relative;
+	transition: all .3s ease;
+
+	&__icon {
+		display: block;
+		margin: auto;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		fill: $white;
+		transition: all .3s ease;
+	}
+}

@@ -1,0 +1,134 @@
+.mobile-menu-toggle {
+  position: absolute;
+  top: 7px;
+  right: 0;
+  z-index: $content;
+  width: 60px; // Increase element touchable area.
+  height: 54px; // Increase element touchable area.
+
+  @include mq(tablet-land) {
+  	display: none;
+  }
+
+  &:after,
+  &:before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 4px;
+    position: absolute;
+    top: 25px;
+    left: 14px;
+    background-color: $mobile-menu-toggle;
+    transition: transform .4s ease-in-out, box-shadow .2s linear;
+    will-change: transform;
+
+    @include mq(tablet-land) {
+      transition: none;
+      will-change: initial;
+    }
+  }
+
+  &:after {
+    box-shadow: 0 11px 0 0 $mobile-menu-toggle, 0 -11px 0 0 $mobile-menu-toggle;
+  }
+
+  &.open {
+    &:before {
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      box-shadow: 0 0 0 0 rgba($mobile-menu-toggle, 0), 0 0 0 0 rgba($mobile-menu-toggle, 0);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.main-navigation {
+	position: absolute;
+	right: 0;
+	top: 99%;
+	z-index: $under-content;
+	width: 100%;
+	background-color: $header-bg;
+	transform: translateX(120%);
+	transition: transform .3s linear, z-index 0s linear .3s;
+	will-change: transform;
+
+	@include mq(tablet) {
+		width: 50%;
+	}
+
+	&.open {
+		z-index: $mobile-menu;
+		transform: translateX(0);
+		transition: transform .3s linear;
+
+		.main-navigation__link {
+			opacity: 1;
+		}
+	}
+
+	@include mq(tablet-land) {
+		position: static;
+		z-index: $content;
+		width: auto;
+		height: auto;
+		margin-right: 20px;
+		transform: translateX(0);
+		transition: transform 0s linear;
+	}
+
+	&.open {
+		.main-navigation__item {
+			@for $i from 1 through 10 {
+			  &:nth-of-type(#{$i}) {
+			  	.main-navigation__link {
+			  		transition: opacity .3s ease (.2s * $i);
+			  	}			    
+			  }
+			}
+		}
+	}
+
+	&__wrapper {
+		margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+
+	&__item {
+		display: block;
+
+		@include mq(tablet-land) {
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+
+	&__link {
+		display: block;
+		margin: 0 20px;
+		font-size: 18px;
+		line-height: $desktop-nav-height;
+		text-decoration: none;
+		text-align: center;
+		color: $m-nav-link;
+		opacity: 0;
+
+		@include mq(tablet-land) {
+			font-size: 14px;
+			opacity: 1;
+		}
+
+		@include mq(desktop) {
+			margin: 0 35px;
+		}
+
+		&:hover,
+		&:focus {
+			color: $m-nav-link-hover;
+		}
+	}
+}

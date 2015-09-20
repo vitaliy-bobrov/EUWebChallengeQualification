@@ -1,0 +1,28 @@
+.container {
+	width: 100%;
+	padding-left: 3%;
+	padding-right: 3%;
+
+	@include mq(fablet) {
+    padding-left: 5%;
+		padding-right: 5%;
+  }
+
+  @include mq(tablet) {
+		padding-left: 8%;
+		padding-right: 8%;
+  }
+
+  @include mq(tablet-land) {
+		padding-left: 3%;
+		padding-right: 3%;
+  }
+
+	@include mq(desktop) {
+		width: map-get($mq-breakpoints, desktop);
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

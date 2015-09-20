@@ -1,0 +1,90 @@
+.join-us-form {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+
+	@include mq(tablet) {
+		width: 80%;
+	}
+
+	@include mq(tablet-land) {
+		width: 457px;
+	}
+
+	::-webkit-input-placeholder {
+	  color: $white;
+	}
+
+	:-moz-placeholder {
+	  color: $white;
+	}
+
+	::-moz-placeholder {
+	  color: $white;
+	}
+
+	:-ms-input-placeholder {
+	  color: $white;
+	}
+
+	&__label {
+		display: block;
+		margin: 0 0 30px;
+		font-size: 24px;
+		line-height: 24px;
+		color: $white;
+		cursor: pointer;
+
+		@include mq(tablet) {
+			margin-bottom: 40px;
+			font-size: 32px;
+			line-height: 32px;
+		}
+
+		@include mq(tablet-land) {
+			margin-bottom: 68px;
+			font-size: 36px;
+			line-height: 36px;
+		}
+	}
+
+	&__field {		
+		width: 100%;
+		padding: 0 30px 14px 0;
+		font-size: 14px;
+		line-height: 25px;
+		color: $white;
+		background-color: transparent;
+		border: 0;
+		border-bottom: 1px solid rgba($white, .3);
+
+		&:focus {
+			border-bottom-color: $white;
+		}
+	}
+
+	&__submit {
+		position: absolute;
+		bottom: 14px;
+		right: 0;
+		width: 24px;
+		height: 25px;
+		padding: 0;
+		border: 0;
+		font-size: 0;
+		background-color: transparent;
+
+		svg {
+			display: block;
+			fill: $white;
+			transition: all .3s linear;
+		}
+
+		&:hover,
+		&:focus {
+			svg {
+				fill: $orange;
+			}
+		}
+	}
+}

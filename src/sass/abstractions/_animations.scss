@@ -1,0 +1,21 @@
+@keyframes rotatority {
+	0% {
+		transform: rotateX(0);
+	}
+
+	25% {
+		transform: rotateX(-35deg);
+	}
+
+	50% {
+		transform: rotateX(35deg);
+	}
+
+	75% {
+		transform: rotateX(-25deg);
+	}
+
+	100% {
+		transform: rotateX(0);
+	}
+}

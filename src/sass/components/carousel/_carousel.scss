@@ -1,0 +1,145 @@
+.carousel {
+	position: relative;
+
+	&__item {
+		font-size: 16px;
+		line-height: 24px;
+
+		&_blue {
+			color: $white;
+			background-color: $blue;
+		}
+
+		&_gray {
+			color: $mine;
+			background-color: $l-gray;
+		}
+
+		&_orange {
+			color: $white;
+			background-color: $orange;
+		}
+	}
+
+	.owl-nav {
+		position: absolute;
+		bottom: 40px;
+		left: 15%;
+
+		@include mq(tablet) {
+			bottom: 30px;
+			left: 10%;
+		}
+
+		@include mq(desktop) {
+			bottom: 59px;
+			left: 16.2%;
+		}
+	}
+
+	.owl-prev,
+	.owl-next {
+		display: inline-block;
+		vertical-align: top;
+		width: 11px;
+		height: 17px;
+		opacity: .5;
+		font-size: 0;
+		background-position: center;
+		background-repeat: no-repeat;
+		transition: all .3s linear;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.owl-prev {
+		background-image: url('../images/arrow-left.png');
+	}
+
+	.owl-next {
+		margin-left: 23px;
+		background-image: url('../images/arrow-right.png');
+	}
+}
+
+.carousel-item {
+	height: 100%;
+
+	&__wrapper {
+		max-width: 75%;
+		margin: 0 auto 0 15%;
+		position: relative;
+
+		@include mq(tablet) {
+			max-width: 80%;
+			margin-left: 10%;
+		}
+
+		@include mq(desktop) {
+			max-width: 67.25146198830409%;
+			margin-left: 16.2%;
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		top: 30px;
+		left: -34px;
+
+		@include mq(tablet) {
+			top: 50px;
+		}
+
+		@include mq(desktop) {
+			top: 61px;
+			left: -48px;
+		}
+
+		img {
+			width: 80%  !important;
+
+			@include mq(desktop) {
+				width: auto !important;
+			}			
+		}
+	}
+
+	&__heading {
+		margin: 0 0 15px;
+		padding-top: 30px;
+		font-size: 22px;
+		line-height: 22px;
+		font-weight: 400;
+
+		@include mq(tablet) {
+			margin-bottom: 24px;
+			padding-top: 50px;
+			font-size: 30px;
+			line-height: 24px;
+		}
+
+		@include mq(desktop) {
+			padding-top: 68px;
+		}
+	}
+
+	&__text {
+		margin: 0;
+		min-height: 280px;
+		padding-bottom: 80px;
+
+		@include mq(mobile-land) {
+			min-height: 212px;
+		}
+
+		@include mq(tablet) {
+			min-height: initial;
+		}
+
+		@include mq(tablet-land) {
+			padding-bottom: 0;
+		}
+	}
+}

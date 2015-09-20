@@ -1,0 +1,114 @@
+.news {
+	padding: 30px 3% 0;
+	font-size: 0;
+
+	@include mq(tablet) {
+		padding-top: 40px;
+	}
+
+	@include mq(tablet-land) {
+		padding-top: 56px;
+	}
+
+	@include mq(desktop) {
+		padding: 56px 0 0;
+	}
+
+	&__more {
+		@extend .explore__more;
+	}
+
+	&__title {
+		@extend .explore__title;
+	}
+
+	&__article {
+		width: 100%;
+		max-width: 300px;
+		margin: 0 auto 30px;
+
+		@include mq(tablet) {
+			display: inline-block;
+			vertical-align: top;
+			width: 48%;
+			max-width: initial;
+			margin: 0 0 40px 4%;
+			border-radius: 3px;
+
+			&:nth-of-type(2n-1) {
+				margin-left: 0;
+			}
+		}
+
+		@include mq(tablet-land) {
+			width: 31.578947372%;
+			margin-left: 2.63157894%;
+			margin-bottom: 40px;
+
+			&:nth-of-type(2n-1) {
+				margin-left: 2.63157894%;
+			}
+
+			&:nth-of-type(3n-2) {
+				margin-left: 0;
+			}
+		}		
+	}
+}
+
+.news-article {
+
+	a {
+		text-decoration: none;
+	}
+
+	&__image {
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__image-link {
+		@extend .explore-article__image-link;
+	}
+
+	&__content {
+		min-height: 78px;
+		padding: 11px 13px 14px;
+		border-radius: 0 0 3px 3px;
+		border-left: 1px solid $alto;
+		border-right: 1px solid $alto;
+		border-bottom: 1px solid $alto;
+	}
+
+	&__title {
+		margin: 0 0 8px;
+		font-size: 14px;
+		line-height: 14px;
+		font-weight: 400;
+		color: $mine;
+		transition: all .3s linear;
+
+		&:hover {
+			color: $blue;
+		}
+	}
+
+	&__info {
+		margin: 0;
+		font-size: 14px;
+		line-height: 14px;
+		color: $dusty;
+	}
+
+	&__author {
+		color: $blue;
+
+		&:hover,
+		&:focus {
+			color: $orange;
+		}
+	}
+}

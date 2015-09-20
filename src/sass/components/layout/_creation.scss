@@ -1,0 +1,40 @@
+.creation {
+	overflow: hidden;
+
+	@include mq(tablet-land) {
+		font-size: 0;
+		height: 323px;
+	}
+
+	@include mq(desktop) {
+		height: 323px;
+	}
+
+	.youtube,
+	&__carousel.owl-carousel {
+		@include mq(tablet-land) {
+			display: inline-block;
+			vertical-align: top;
+			width: 50%;
+			height: 100%;
+		}
+	}
+
+	&__carousel.owl-carousel {
+		height: 100%;
+	}
+
+	&__carousel {
+		&.owl-carousel.owl-loaded {
+			@include mq(tablet-land) {
+				display: inline-block;
+			}			
+		}
+
+		.owl-stage-outer,
+		.owl-stage,
+		.owl-item {
+			height: 100%;		
+		}
+	}
+}
